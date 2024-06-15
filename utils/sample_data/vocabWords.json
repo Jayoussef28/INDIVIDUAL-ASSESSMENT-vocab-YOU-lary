@@ -1,0 +1,33 @@
+{
+  "id 1":{
+    "title": "Variable",
+    "definition": "Container for storing values",
+    "firebaseKey": "",
+    "language": "JavaScript",
+    "uid": ""
+  }, 
+
+  "id 2":{
+    "title": "Boolean",
+    "definition":"A value that can be true or false",
+    "firebaseKey": "",
+    "language": "JavaScript",
+    "uid": ""
+  },
+
+  "id 3": {
+    "title": "HTML Element",
+    "definition": "logical unit of HTML document such as header or paragraph",
+    "firebaseKey": "",
+    "language": "HTML",
+    "uid": ""
+  }, 
+
+  "id 4":{
+    "title": "Float",
+    "definition": "Python data type which stores floating-point numbers",
+    "firebaseKey": "",
+    "language": "Python",
+    "uid": ""
+  }
+ }
