@@ -1,13 +1,13 @@
-import getVocab from '../api/vocabData';
+import { getVocab } from '../api/vocabData';
 import { showVocab } from '../pages/vocab';
 import { signOut } from '../utils/auth';
 
-const navigationEvents = (user) => {
+const navigationEvents = () => {
   document.querySelector('#logout-button')
     .addEventListener('click', signOut);
 
   document.querySelector('#all-vocab').addEventListener('click', () => {
-    getVocab(user.uid).then(showVocab);
+    getVocab().then(showVocab);
   });
 };
 
