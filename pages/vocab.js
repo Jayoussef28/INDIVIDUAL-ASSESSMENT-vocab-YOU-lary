@@ -3,7 +3,7 @@ import renderToDOM from '../utils/renderToDOM';
 
 const emptyVocab = () => {
   const domString = '<h1>No cards</h1>';
-  renderToDOM('#vocab-card', domString);
+  renderToDOM('#store', domString);
 };
 
 const showVocab = (array) => {
