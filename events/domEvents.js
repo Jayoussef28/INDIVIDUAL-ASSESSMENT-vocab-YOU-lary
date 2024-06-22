@@ -1,4 +1,5 @@
-import { deleteVocab, getVocab } from '../api/vocabData';
+import { deleteVocab, getVocab, getSingleVocab } from '../api/vocabData';
+import addVocabForm from '../components/forms/addVocabForm';
 import { showVocab } from '../pages/vocab';
 
 const domEvents = () => {
@@ -10,9 +11,18 @@ const domEvents = () => {
         const [, firebaseKey] = e.target.id.split('--');
 
         deleteVocab(firebaseKey).then(() => {
-          getVocab().then((vocab) => showVocab(vocab));
+          getVocab().then(showVocab);
         });
       }
+    }
+
+    if (e.target.id.includes('add-vocab-btn')) {
+      addVocabForm();
+    }
+
+    if (e.target.id.includes('edit-vocab-btn')) {
+      const [, firebaseKey] = e.target.id.split('--');
+      getSingleVocab(firebaseKey).then((vocabObj) => addVocabForm(vocabObj));
     }
   });
 };

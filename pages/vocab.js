@@ -18,8 +18,8 @@ const showVocab = (array) => {
           <h6 class="card-description">${item.definition}</h6>
             <p class="card-text bold"><span class="badge badge-info category-badge"><i class="fa fa-book" aria-hidden="true"></i> Category:</span>${item.language}</p>
             <hr>
-            <button id="edit-card-btn--${item.firebaseKey}" class="btn btn-link">Edit</button>
-            <button id="delete-card-btn--${item.firebaseKey}" class="btn btn-link">Delete</button>
+            <button id="edit-vocab-btn--${item.firebaseKey}" class="btn btn-link">Edit</button>
+            <button id="delete-vocab-btn--${item.firebaseKey}" class="btn btn-link">Delete</button>
         </div>
       </div>`;
   });
