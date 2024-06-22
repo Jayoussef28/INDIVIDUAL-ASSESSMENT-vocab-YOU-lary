@@ -5,7 +5,7 @@ const loginButton = () => {
   const domString = `<h1 id = "loginHeader"> Welcome To Vocab-YOU-lary!</h1> 
   <br> 
   <button id="google-auth" class="btn btn-danger">LOGIN</button>`;
-  document.querySelector('#login-form-container').innerHTML = domString;
+  document.querySelector('#app').innerHTML = domString;
   document.querySelector('#google-auth').addEventListener('click', signIn);
 };
 

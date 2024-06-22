@@ -24,3 +24,18 @@ body {
   gap: 20px;
   margin-top: 50px;
 }
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.form-control {
+  width: 40%;
+}
+
+#submit-btn {
+  margin-top: 20px;
+}

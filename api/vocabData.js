@@ -64,12 +64,60 @@ const updateVocab = (payload) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+const filterHTML = () => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/vocab.json`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      const vocabLanguage = Object.values(data).filter((obj) => obj.language === 'HTML');
+      resolve(vocabLanguage);
+    })
+    .catch(reject);
+});
+
+const filterJavaScript = () => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/vocab.json`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      const vocabLanguage = Object.values(data).filter((obj) => obj.language === 'JavaScript');
+      resolve(vocabLanguage);
+    })
+    .catch(reject);
+});
+
+const filterPython = () => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/vocab.json`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      const vocabLanguage = Object.values(data).filter((obj) => obj.language === 'Python');
+      resolve(vocabLanguage);
+    })
+    .catch(reject);
+});
+
 export {
 
   getVocab,
   deleteVocab,
   getSingleVocab,
   createVocab,
-  updateVocab
+  updateVocab,
+  filterHTML,
+  filterJavaScript,
+  filterPython
 
 };

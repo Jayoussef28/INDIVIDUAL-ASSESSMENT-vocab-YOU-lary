@@ -20,7 +20,7 @@ const addVocabForm = (obj = {}) => {
       </div>
       </div>
   
-      <button type="submit" class="btn btn-primary">Submit Vocab
+      <button type="submit" class="btn btn-primary" id="submit-btn">Submit Vocab
       </button>
     </form>`;
 
