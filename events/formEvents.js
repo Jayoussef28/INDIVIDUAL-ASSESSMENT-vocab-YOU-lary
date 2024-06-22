@@ -1,7 +1,7 @@
 import { createVocab, getVocab, updateVocab } from '../api/vocabData';
 import { showVocab } from '../pages/vocab';
 
-const formEvents = () => {
+const formEvents = (user) => {
   document.querySelector('#main-container').addEventListener('submit', (e) => {
     e.preventDefault();
     if (e.target.id.includes('submit-vocab')) {
@@ -14,7 +14,7 @@ const formEvents = () => {
         createVocab(payload).then(({ name }) => {
           const patchPayload = { firebaseKey: name };
           updateVocab(patchPayload).then(() => {
-            getVocab().then((vocab) => showVocab(vocab));
+            getVocab(user.uid).then((vocab) => showVocab(vocab));
           });
         });
       }

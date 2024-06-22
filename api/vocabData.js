@@ -80,7 +80,7 @@ const filterHTML = () => new Promise((resolve, reject) => {
 });
 
 const filterJavaScript = () => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/vocab.json`, {
+  fetch(`${endpoint}/vocab.json?`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',

@@ -10,7 +10,7 @@ import {
 import addVocabForm from '../components/forms/addVocabForm';
 import { showVocab } from '../pages/vocab';
 
-const domEvents = () => {
+const domEvents = (user) => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
     if (e.target.id.includes('delete-vocab')) {
     // eslint-disable-next-line no-alert
@@ -19,7 +19,7 @@ const domEvents = () => {
         const [, firebaseKey] = e.target.id.split('--');
 
         deleteVocab(firebaseKey).then(() => {
-          getVocab().then(showVocab);
+          getVocab(user.id).then(showVocab);
         });
       }
     }
@@ -27,6 +27,10 @@ const domEvents = () => {
     if (e.target.id.includes('edit-vocab-btn')) {
       const [, firebaseKey] = e.target.id.split('--');
       getSingleVocab(firebaseKey).then((vocabObj) => addVocabForm(vocabObj));
+    }
+
+    if (e.target.id.includes('all-vocab')) {
+      getVocab(user.uid).then((vocab) => showVocab(vocab));
     }
 
     if (e.target.id.includes('html-btn')) {

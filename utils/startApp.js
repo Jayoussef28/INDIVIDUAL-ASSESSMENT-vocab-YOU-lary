@@ -8,16 +8,16 @@ import navigationEvents from '../events/navigationEvents';
 import { showVocab } from '../pages/vocab';
 import filterButtons from '../components/buttons/filterButtons';
 
-const startApp = () => {
+const startApp = (user) => {
   domBuilder();
-  domEvents();
-  formEvents();
+  domEvents(user);
+  formEvents(user);
   filterButtons();
   navBar();
   logoutButton();
-  navigationEvents();
+  navigationEvents(user);
 
-  getVocab().then((vocab) => showVocab(vocab));
+  getVocab(user.uid).then((vocab) => showVocab(vocab));
 };
 
 export default startApp;

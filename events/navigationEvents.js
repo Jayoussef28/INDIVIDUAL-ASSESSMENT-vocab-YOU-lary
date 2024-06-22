@@ -3,12 +3,12 @@ import { showVocab } from '../pages/vocab';
 import addVocabForm from '../components/forms/addVocabForm';
 import { signOut } from '../utils/auth';
 
-const navigationEvents = () => {
+const navigationEvents = (user) => {
   document.querySelector('#logout-button')
     .addEventListener('click', signOut);
 
   document.querySelector('#all-vocab').addEventListener('click', () => {
-    getVocab().then(showVocab);
+    getVocab(user.uid).then(showVocab);
   });
 
   document.querySelector('#create-entry').addEventListener('click', () => {
