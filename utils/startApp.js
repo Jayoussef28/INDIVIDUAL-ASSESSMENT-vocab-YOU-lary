@@ -6,11 +6,13 @@ import domEvents from '../events/domEvents';
 import formEvents from '../events/formEvents';
 import navigationEvents from '../events/navigationEvents';
 import { showVocab } from '../pages/vocab';
+import filterButtons from '../components/buttons/filterButtons';
 
 const startApp = () => {
   domBuilder();
   domEvents();
   formEvents();
+  filterButtons();
   navBar();
   logoutButton();
   navigationEvents();
