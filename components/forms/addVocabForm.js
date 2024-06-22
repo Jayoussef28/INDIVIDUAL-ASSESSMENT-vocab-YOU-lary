@@ -1,7 +1,7 @@
 import clearDom from '../../utils/clearDom';
 import renderToDOM from '../../utils/renderToDOM';
 
-// USING THIS FORM FOR BOTH CREATE AND UPDATE
+// USING THIS FORM FOR BOTH CREATE & UPDATE
 const addVocabForm = (obj = {}) => {
   clearDom();
   const domString = `
